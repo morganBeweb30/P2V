@@ -11,8 +11,4 @@ $('#player-btn').click(function() {
         '<p id='+id+' style="font-size:14px;">'+playerName+'</p>';
           $('.list').append(playerList);
 
-          for (var i = 0; i < id; i++) {
-            $.jStorage.set("id_player" + id, playerName)
-          }
-
 })
