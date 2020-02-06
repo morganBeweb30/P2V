@@ -1,14 +1,23 @@
 $('#play').hide();
 
-let id = Date.now();
 
 $('#player-btn').click(function() {
-  let playerName = $('#player-id').val();
-    let playerList = '';
+const score = 0
+const player = $('#player-id').val()
 
+let ref = Date.now();
+  let test = {
+    player,
+    score
+  }
+  $.jStorage.set('ref:'+ref+'', test);
 
-      playerList +=
-        '<p id='+id+' style="font-size:14px;">'+playerName+'</p>';
-          $('.list').append(playerList);
+  let playerList = ''
+    playerList += '<p style="font-size:14px">'+test.player+'</p>'
+
+  $('.list').append(playerList)
+        // for (var i = 0; i < playerName; i++) {
+        //   $.jStorage.set("player" + i, players_DB[i]);
+        // }
 
 })
