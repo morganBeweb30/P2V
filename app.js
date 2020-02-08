@@ -1,35 +1,22 @@
-$('#play').hide();
+$('.game-solo').hide();
+$('.solo-quiz').hide();
+
+let quiz = [{
+    "ask": "Qui est le créateur de Paypal?",
+    "choice": ["John Cena", "Elon Musk"],
+    "correct": "Elon Musk"
+  }, {
+    "ask": "De quel langage dépend Node.JS?",
+    "choice": ["PHP", "JavaScript"],
+    "correct": "JavaScript"
+}]
 
 
+$('#solo').click(function() {
+  $('.menu').hide()
+  $('.game-solo').show()
 
-
-let uid = 0;
-function generateID() {
-  uid += 1
-}
-
-$('#player-btn').click(function() {
-  generateID()
-const score = 0
-const player = $('#player-id').val()
-let test = $.jStorage.index()
-
-  let data = {
-    player,
-    score
-  }
-  $.jStorage.set('data-'+uid, data);
-  $.jStorage.reInit()
-
-  let playerList = ''
-    playerList += '<p style="font-size:14px">'+data.player+'</p>'
-
-  $('.list').append(playerList)
-
-      console.log(test.length)
-
-      if (test.length > 0 ) {
-        $('#play').toggle();
-      }
+  const element =  document.querySelector('.game-solo')
+  element.classList.add('animated', 'bounceInDown')
 
 })

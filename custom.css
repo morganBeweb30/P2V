@@ -3,9 +3,25 @@ body {
   background-color: #2E294E;
   font-family: 'Sigmar One', cursive;
 }
+h2 {
+  color: #63e892;
+}
+h6 {
+  color: #FC7753;
+}
 .title {
   margin-top: 150px;
   color: #C5D86D;
+}
+.menu-mode-title {
+  color: #FC7753;
+}
+.menu-mode button{
+  margin-top: 20px;
+  width: 180px;
+}
+.psudo-input {
+  margin-top: 150px;
 }
 footer small {
   color:#FC7753;
@@ -13,4 +29,15 @@ footer small {
 .list p{
   color: #FC7753;
   font-size: 14px;
+}
+/*Game part*/
+.game-title {
+  color: #FC7753;
+}
+.ask {
+  margin-top: 150px;
+  color: #FC7753;
+}
+.responder {
+  color: #63e892;
 }
