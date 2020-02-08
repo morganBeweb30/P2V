@@ -13,6 +13,11 @@ h6 {
   margin-top: 150px;
   color: #C5D86D;
 }
+.game-solo .game-title {
+  margin-top: 150px;
+  color: #C5D86D;
+}
+
 .menu-mode-title {
   color: #FC7753;
 }
@@ -25,7 +30,7 @@ h6 {
   width: 180px;
 }
 .pseudo-input {
-  margin-top: 150px;
+  margin-top: 30px;
 }
 footer small {
   color:#FC7753;
@@ -39,7 +44,7 @@ footer small {
   color: #FC7753;
 }
 .ask {
-  margin-top: 150px;
+  margin-top: 30px;
   color: #FC7753;
 }
 .responder {
