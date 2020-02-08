@@ -1,7 +1,8 @@
 $('.game-solo').hide();
+$('.menu-theme').hide();
 $('.solo-quiz').hide();
 
-let quiz = [{
+let quizTech = [{
     "ask": "Qui est le créateur de Paypal?",
     "choice": ["John Cena", "Elon Musk"],
     "correct": "Elon Musk"
@@ -13,10 +14,14 @@ let quiz = [{
 
 
 $('#solo').click(function() {
+  $('.menu-mode').hide()
+  $('.menu-theme').show()
+
+  const element =  document.querySelector('.menu-theme')
+  element.classList.add('animated', 'bounceInLeft')
+})
+
+$('#tech').click(function() {
   $('.menu').hide()
   $('.game-solo').show()
-
-  const element =  document.querySelector('.game-solo')
-  element.classList.add('animated', 'bounceInDown')
-
 })

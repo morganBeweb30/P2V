@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,7 +23,15 @@
           <button type="button" class="btn btn-light" disabled>Multijoueur <i class="lni-users"></i></button>
         </div>
 
+        <div class="menu-theme text-center">
+          <h6>Selectionnez un thème</h6>
+
+          <button id="tech" type="button" class="btn btn-light">Technologie</button><br>
+          <button type="button" class="btn btn-light" disabled>Gaming </button>
+        </div>
     </section>
+
+
 
     <section class="game-solo">
       <h1 class="text-center game-title">Solo Quiz</h1>
@@ -32,15 +40,16 @@
           <h2 class="text-center"><span>0</span></h2>
         </div>
 
-        <div class="psudo-input text-center">
+        <div class="pseudo-input text-center">
           <div style="width: 300px !important;" class="input-group mb-3 mx-auto">
             <input id="player-id" type="text" class="form-control" placeholder="Ajoute ton p'tit nom :)" required>
-            <div class="input-group-append">
+            <!-- <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" id="player-btn"><i class="lni-plus"></i></button>
-            </div>
+            </div> -->
           </div>
           <button type="button" class="btn btn-primary btn-sm">Jouer</button>
         </div>
+
         <div class="solo-quiz">
           <h4 class="text-center ask"><span id="quiz"></span></h4>
           <div class="text-center">
