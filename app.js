@@ -205,23 +205,23 @@ const next_askTech = function() {
 }
 const solo_choice_1 = function() {
   if (randomQuizTech.choice[0] === randomQuizTech.correct) {
-    alert('win')
+
     score = score + 1;
     $('#score-in-party').text(score)
     next_askTech()
   } else {
-    alert('lose')
+  
     next_askTech()
   }
 }
 const solo_choice_2 = function() {
   if (randomQuizTech.choice[1] === randomQuizTech.correct) {
-    alert('win')
+
     score = score + 1
     $('#score-in-party').text(score)
     next_askTech()
   } else {
-    alert('lose')
+  
     next_askTech()
   }
 }
