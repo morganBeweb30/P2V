@@ -13,33 +13,29 @@
     <title>QuizKing</title>
   </head>
   <body>
-    <section class="menu">
-        <h1 class="title text-center">QuizKing</h1>
+    <div class="header">
+      <h1 class="title text-center"><i class="lni-crown"></i><br>QuizKing</h1>
+      <h6 class="sub-title text-center"><span id="subtitle"></span></h6>
+    </div>
 
+    <section class="menu">
         <div class="menu-mode text-center">
-          <h6 class="menu-mode-title">Selectionnez votre mode</h6>
           <button id="solo" type="button" class="btn btn-light">Solo <i class="lni-user"></i></button><br>
           <button type="button" class="btn btn-light" disabled>Jeu de table <i class="lni-coffee-cup"></i></button><br>
           <button type="button" class="btn btn-light" disabled>Multijoueur <i class="lni-users"></i></button>
         </div>
+    </section>
 
-        <div class="menu-theme text-center">
-          <h6>Selectionnez un thème</h6>
-
-          <button id="tech" type="button" class="btn btn-light">Technologie</button><br>
-          <button type="button" class="btn btn-light" disabled>Gaming </button>
-        </div>
+    <section class="themes">
+      <div class="menu-theme text-center">
+        <button id="tech" type="button" class="btn btn-light">Technologie</button><br>
+        <button type="button" class="btn btn-light" disabled>Gaming</button>
+        <button type="button" class="btn btn-light" disabled>Cinema</button>
+      </div>
     </section>
 
 
-
     <section class="game-solo">
-      <h1 class="text-center game-title">Solo Quiz</h1>
-        <div class="score-board">
-          <h6 class="text-center">Ton dernier score</h6>
-          <h2 class="text-center"><span>0</span></h2>
-        </div>
-
         <div class="game-start-solo">
           <div class="pseudo-input text-center">
             <div style="width: 300px !important;" class="input-group mb-3 mx-auto">
@@ -50,19 +46,24 @@
             </div>
           </div>
           <div class="text-center">
-            <button id="play_solo" type="button" class="btn btn-primary btn-sm">Jouer</button>
+            <button id="play_solo" type="button" class="btn btn-primary btn">Jouer</button>
           </div>
         </div>
-
+        <!-- In party -->
+        <h3 class="score text-center">Score<br><span id="score-in-party">0</span></h3>
         <div class="solo-quiz">
-          <h4 class="text-center ask"><span id="quiz"></span></h4>
+          <h5 class="text-center ask"><span id="quiz"></span></h5>
           <div class="text-center">
-            <button id="choice_1" type="button" class="btn btn-primary btn-sm"></button>
-            <button id="choice_2" type="button" class="btn btn-primary btn-sm"></button>
+            <button onclick="solo_choice_1()" id="choice_1" type="button" class="btn btn-primary btn-sm"></button>
+            <button onclick="solo_choice_2()" id="choice_2" type="button" class="btn btn-primary btn-sm"></button>
           </div>
         </div>
-    </section>
+        <!-- End party -->
+        <div class="solo-end">
+          <h3 class="text-center">Fin de la partie</h3>
+        </div>
 
+    </section>
 
     <footer class="fixed-bottom">
       <div class="container text-center">

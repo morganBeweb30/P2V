@@ -6,21 +6,27 @@ body {
 h2 {
   color: #63e892;
 }
+h3 {
+  color: white;
+}
 h6 {
   color: #FC7753;
 }
-.title {
-  margin-top: 150px;
+
+.header {
   color: #C5D86D;
 }
-.game-solo .game-title {
-  margin-top: 150px;
-  color: #C5D86D;
+.header .title i {
+  font-size: 68px;
+}
+.header .title h1 {
+  text-shadow: 4px 4px 8px 8px black;
 }
 
-.menu-mode-title {
-  color: #FC7753;
+.menu-mode, .menu-theme, .game-solo {
+  margin-top: 75px;
 }
+
 .menu-mode button{
   margin-top: 20px;
   width: 180px;
@@ -29,9 +35,16 @@ h6 {
   margin-top: 20px;
   width: 180px;
 }
-.pseudo-input {
+
+.game-solo .pseudo-input {
   margin-top: 30px;
 }
+
+
+
+
+
+
 footer small {
   color:#FC7753;
 }
