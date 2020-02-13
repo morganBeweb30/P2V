@@ -162,8 +162,8 @@ let quizTech = [{
     "ask": "Certain smarthphone on t'il une reconnaissance digital?",
     "choice": ["Oui, certain", "Impossible"],
     "correct": "Oui, certain"
-}]
-console.log(quizTech);
+  }]
+
 let pseudo;
 let score = 0;
 
@@ -174,8 +174,8 @@ $('#solo').click(function() {
   $('.menu-theme').show()
 
   // Test anime
-  const element =  document.querySelector('.menu-theme')
-  element.classList.add('animated', 'bounceInLeft')
+  const soloToTheme =  document.querySelector('.menu-theme')
+  soloToTheme.classList.add('animated', 'bounceInLeft')
 })
 
 $('#tech').click(function() {
@@ -183,6 +183,8 @@ $('#tech').click(function() {
   $('.game-solo').show()
   $('.score').hide()
   $('.solo-end').hide()
+  const techToParty =  document.querySelector('.game-solo')
+  techToParty.classList.add('animated', 'bounceInLeft')
   let player_get_s = Lockr.get('solo');
   if (player_get_s == null) {
     pseudo = $('#player-id').val()
@@ -192,37 +194,88 @@ $('#tech').click(function() {
   }
 })
 
-let randomQuizTech;
+let maxask_size = 15;
+let minask_size = 15;
 const newSoloAsking = function() {
-  randomQuizTech = quizTech[Math.floor(Math.random() * quizTech.length)];
+  let u_equal = true;
+  numerize = Math.floor(Math.random() * quizTech.length - minask_size);
+  minask_size = Math.min(minask_size + 1, maxask_size)
+  quizTechRandomize = quizTech.splice(numerize, 1)
+  console.log(quizTechRandomize);
 }
 
 const next_askTech = function() {
   newSoloAsking()
   refreshSoloQuiz()
   inSoloParty()
-  console.log(randomQuizTech)
+
+}
+
+let react_lose = 'Oh Non!'
+let react_win = 'Oui! Continue champion!'
+
+function loseAnime(element, animationName, callback) {
+    const node = document.querySelector('.react')
+    node.classList.add('animated', 'shake')
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', 'shake')
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
+function winAnime(element, animationName, callback) {
+    const node = document.querySelector('.react')
+    node.classList.add('animated', 'tada')
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', 'tada')
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
 }
 const solo_choice_1 = function() {
-  if (randomQuizTech.choice[0] === randomQuizTech.correct) {
-
+  if (quizTechRandomize[0].choice[0] === quizTechRandomize[0].correct) {
     score = score + 1;
     $('#score-in-party').text(score)
     next_askTech()
+    winAnime()
+    $('#react').text(react_win)
+    setTimeout(function () {
+      $('#react').text('')
+    }, 1500);
   } else {
-  
     next_askTech()
+    loseAnime()
+    $('#react').text(react_lose)
+    setTimeout(function () {
+      $('#react').text('')
+    }, 1500);
   }
 }
 const solo_choice_2 = function() {
-  if (randomQuizTech.choice[1] === randomQuizTech.correct) {
-
+  if (quizTechRandomize[0].choice[1] === quizTechRandomize[0].correct) {
     score = score + 1
     $('#score-in-party').text(score)
     next_askTech()
+    winAnime()
+    $('#react').text(react_win)
+    setTimeout(function () {
+      $('#react').text('')
+    }, 1500);
   } else {
-  
     next_askTech()
+    loseAnime()
+    $('#react').text(react_lose)
+    setTimeout(function () {
+      $('#react').text('')
+    }, 1500);
   }
 }
 
@@ -231,17 +284,15 @@ $('#play_solo').click(function() {
   $('.score').show()
   $('.solo-quiz').show()
   newSoloAsking()
-  $('#quiz').text(randomQuizTech.ask)
-  $('#choice_1').text(randomQuizTech.choice[0])
-  $('#choice_2').text(randomQuizTech.choice[1])
+  refreshSoloQuiz()
 })
 
 const refreshSoloQuiz = function() {
   $('.game-start-solo').hide()
   $('.solo-quiz').show()
-  $('#quiz').text(randomQuizTech.ask)
-  $('#choice_1').text(randomQuizTech.choice[0])
-  $('#choice_2').text(randomQuizTech.choice[1])
+  $('#quiz').text(quizTechRandomize[0].ask)
+  $('#choice_1').text(quizTechRandomize[0].choice[0])
+  $('#choice_2').text(quizTechRandomize[0].choice[1])
 }
 
 let countSolo = 0;
@@ -255,4 +306,11 @@ const inSoloParty = function() {
 
     }
 
+}
+const openChangeLog = function() {
+  $('#openChangeLog').modal('show')
+}
+
+const backToMenu = function() {
+  document.location.reload(true);
 }

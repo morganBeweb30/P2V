@@ -28,9 +28,9 @@
 
     <section class="themes">
       <div class="menu-theme text-center">
-        <button id="tech" type="button" class="btn btn-light">Technologie</button><br>
-        <button type="button" class="btn btn-light" disabled>Gaming</button>
-        <button type="button" class="btn btn-light" disabled>Cinema</button>
+        <button id="tech" type="button" class="btn btn-light">Technologie <i class="lni-cloudnetwork"></i></button><br>
+        <button type="button" class="btn btn-light" disabled>Gaming <i class="lni-game"></i></button>
+        <button type="button" class="btn btn-light" disabled>Cinema <i class="lni-video"></i></button>
       </div>
     </section>
 
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="text-center">
-            <button id="play_solo" type="button" class="btn btn-primary btn">Jouer</button>
+            <button style="margin-top:10vh;width:180px;" id="play_solo" type="button" class="btn btn-primary btn">Jouer <i class="lni-play"></i></button>
           </div>
         </div>
         <!-- In party -->
@@ -57,22 +57,45 @@
             <button onclick="solo_choice_1()" id="choice_1" type="button" class="btn btn-primary btn-sm"></button>
             <button onclick="solo_choice_2()" id="choice_2" type="button" class="btn btn-primary btn-sm"></button>
           </div>
+          <h2 class="react text-center"><span id="react"></span></h2>
         </div>
         <!-- End party -->
-        <div class="solo-end">
-          <h3 class="text-center">Fin de la partie</h3>
+        <div class="solo-end text-center">
+          <h3>Fin de la partie</h3>
+          <button onclick="backToMenu()" type="button" class="btn btn-primary btn-sm">Retour au menu <i class="lni-spinner-arrow"></i></button>
         </div>
 
     </section>
 
     <footer class="fixed-bottom">
       <div class="container text-center">
-        <small>FoobarIT Games</small><br>
-          <small>v0.0.1 Alpha</small>
+       <h1 id="option">  <!--<i onclick="openOption()" class="lni-cog"></i>--><i onclick="openChangeLog()" class="lni-check-box"></i></h1>
       </div>
     </footer>
 
-
+    <div class="modal fade" id="openChangeLog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">ChangeLog 0.0.2a</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            - Ajout d'une nouvelle font.<br>
+            - Menu fin de partie (solo).<br>
+            - Système de score.<br>
+            - Ajout de plusieurs icones représentatif.<br>
+            - Réaction de text pendant la partie (solo).<br>
+            - [Fix]Les questions ne ce répéte plus.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./libs/js/jquery-3.4.1.slim.min.js"></script>
